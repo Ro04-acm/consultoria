@@ -1,0 +1,203 @@
+/* Box sizing universal */
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    color: #222;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 0.5em 0;
+  }
+  
+  a {
+    color: #222;
+    text-decoration: none;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 1.2rem clamp(1rem, 4vw, 3rem); /* responsive padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid #e5e5e5;
+    flex-wrap: wrap;
+  }
+  
+  .navbar .logo {
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+  
+  .navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding-right: 1rem; /* extra padding to avoid cutoff */
+    flex-wrap: wrap;
+  }
+  
+  .navbar nav ul li a:hover {
+    border-bottom: 2px solid #000;
+  }
+  
+  /* Hero */
+  .hero {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  #bg-video {
+    position: absolute;
+    top: 5%; /* lo baja un poco */
+    left: 50%;
+    transform: translateX(-50%) scale(0.95); /* lo centra horizontalmente y lo escala al 95% */
+    width: auto;
+    height: 110%; /* un poco más alto para cubrir verticalmente si es necesario */
+    object-fit: cover;
+    z-index: 0;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    max-width: 90%;
+    z-index: 1;
+  }
+  
+  .overlay h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .overlay p {
+    font-size: 1.4rem;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+    scroll-margin-top: 100px; /* compensar navbar */
+  }
+  
+  .section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+  
+  .desc {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+  
+  /* Footer */
+  footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 1rem;
+    }
+    
+    .navbar nav ul {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .overlay h1 {
+      font-size: 2.5rem;
+    }
+    
+    .overlay p {
+      font-size: 1.1rem;
+    }
+    
+    .section {
+      padding: 3rem 1rem;
+    }
+    
+    .section h2 {
+      font-size: 2rem;
+    }
+    
+    .card {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar nav ul {
+      gap: 0.8rem;
+      font-size: 0.8rem;
+    }
+    
+    .overlay {
+      padding: 1.5rem;
+    }
+    
+    .overlay h1 {
+      font-size: 2rem;
+    }
+    
+    .overlay p {
+      font-size: 1rem;
+    }
+    
+    .card {
+      padding: 1.2rem;
+    }
+  }
